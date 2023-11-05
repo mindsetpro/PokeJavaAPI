@@ -1,9 +1,29 @@
-<main>
-    <div class="search-container">
-        <input type="text" id="pokemonName" placeholder="Enter Pokémon Name">
-        <button onclick="searchPokemon()">Search</button>
-    </div>
-    <div class="code-container" id="codeContainer">
-        <code id="pokemonData"></code>
-    </div>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeJava - Home</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to PokeJava</h1>
+        <p>Explore the world of Pokémon with our comprehensive API!</p>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="pokemonName" placeholder="Enter Pokémon Name">
+            <button onclick="searchPokemon()">Search</button>
+        </div>
+        <div class="code-container" id="codeContainer">
+            <code id="pokemonData"></code>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 PokeJava</p>
+    </footer>
+
+    <script src="pokemonSearch.js"></script>
+</body>
+</html>
