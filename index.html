@@ -34,51 +34,52 @@
         <p>&copy; 2023 PokeJava</p>
     </footer>
 
-    <script>
-        function searchPokemon() {
-            const pokemonName = document.getElementById('pokemonName').value;
-            const url = `https://mindsetpro.github.io/PokeJavaAPI/pokemon/${pokemonName.toLowerCase()}.json`;
+<script>
+    function searchPokemon() {
+        const pokemonName = document.getElementById('pokemonName').value.toLowerCase();
+        const url = `https://mindsetpro.github.io/PokeJavaAPI/pokemon/${pokemonName}.json`;
 
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const codeContainer = document.getElementById('codeContainer');
-                    const pokemonData = document.getElementById('pokemonData');
-                    pokemonData.textContent = JSON.stringify(data, null, 2);
-                    codeContainer.style.display = 'block';
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    alert('Pokemon data not found. Please try again.');
-                });
-        }
-
-        // Fetch Pokemon types
-        fetch('https://mindsetpro.github.io/PokeJavaAPI/data/types.json')
+        fetch(url)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 return response.json();
             })
-            .then(types => {
-                const typeList = document.querySelector('.type-list');
-                types.forEach(type => {
-                    const li = document.createElement('li');
-                    li.textContent = type;
-                    typeList.appendChild(li);
-                });
+            .then(data => {
+                const codeContainer = document.getElementById('codeContainer');
+                const pokemonData = document.getElementById('pokemonData');
+                pokemonData.textContent = JSON.stringify(data, null, 2);
+                codeContainer.style.display = 'block';
             })
             .catch(error => {
-                console.error('Error fetching types:', error);
-                alert('Unable to fetch Pokemon types. Please try again.');
+                console.error('Error fetching data:', error);
+                alert('Pokemon data not found. Please try again.');
             });
-    </script>
+    }
+
+    // Fetch Pokemon types
+    fetch('https://mindsetpro.github.io/PokeJavaAPI/data/types.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(types => {
+            const typeList = document.querySelector('.type-list');
+            types.forEach(type => {
+                const li = document.createElement('li');
+                li.textContent = type;
+                typeList.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching types:', error);
+            alert('Unable to fetch Pokemon types. Please try again.');
+        });
+</script>
+
 
     <script src="pokemonSearch.js"></script>
 </body>
