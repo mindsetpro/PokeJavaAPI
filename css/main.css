@@ -1,0 +1,30 @@
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.code-container {
+    margin-top: 20px;
+    display: none;
+}
+
+#pokemonData {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    font-family: monospace;
+}
