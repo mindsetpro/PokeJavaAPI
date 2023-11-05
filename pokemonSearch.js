@@ -1,7 +1,7 @@
 <script>
     function searchPokemon() {
         const pokemonName = document.getElementById('pokemonName').value;
-        const url = `https://mindsetpro.github.io/PokeJavaAPI/Pokemon/${pokemonName}.json`;
+        const url = `https://mindsetpro.github.io/PokeJavaAPI/pokemon/${pokemonName}.json`;
 
         fetch(url)
             .then(response => response.json())
